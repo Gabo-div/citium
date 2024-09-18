@@ -4,6 +4,8 @@ import "./globals.css";
 import { Roboto_Serif } from "next/font/google";
 import { Plus_Jakarta_Sans } from "next/font/google";
 
+import { Toaster } from "@/components/ui/toaster";
+
 const robotoSerif = Roboto_Serif({
   subsets: ["latin"],
 });
@@ -47,6 +49,7 @@ export default function RootLayout({
         className={`${robotoSerif.className} ${plusJakartaSans.className} antialiased`}
       >
         {children}
+        <Toaster />
       </body>
     </html>
   );

@@ -2,6 +2,8 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
+import { useToast } from "@/hooks/use-toast";
+
 import { z } from "zod";
 
 import { Button } from "@/components/ui/button";
@@ -34,6 +36,8 @@ const formSchema = z.object({
 });
 
 export default function ContactForm() {
+  const { toast } = useToast();
+
   const form = useForm<z.infer<typeof formSchema>>({
     defaultValues: {
       name: "",
@@ -43,8 +47,36 @@ export default function ContactForm() {
     resolver: zodResolver(formSchema),
   });
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log(data);
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
+    const formData = new FormData();
+
+    formData.append("name", data.name);
+    formData.append("email", data.email);
+    formData.append("message", data.message);
+
+    const result = await fetch("https://formspree.io/f/mjkbqbla", {
+      method: "POST",
+      body: formData,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    form.reset();
+
+    if (!result.ok) {
+      toast({
+        title: "¡Ups! Algo salió mal.",
+        description: "Por favor, inténtalo de nuevo.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "¡Gracias por tu mensaje!",
+      description: "Te responderemos lo antes posible.",
+    });
   };
 
   return (
