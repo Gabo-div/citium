@@ -43,7 +43,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="bg-zinc-100">
+    <section id="services" className="bg-zinc-100 py-32">
       <div className="container mx-auto flex min-h-screen max-w-6xl flex-col items-center px-4">
         <div className="mt-20 flex max-w-xl flex-col items-center justify-center gap-4 text-center">
           <h1 className="font-serif text-2xl font-bold sm:text-3xl md:text-4xl">

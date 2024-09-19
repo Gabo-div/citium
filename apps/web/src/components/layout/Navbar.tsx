@@ -16,19 +16,25 @@ export default function Navbar() {
         />
         <div className="flex items-center gap-4">
           <Link
-            className="text-sm font-bold text-zinc-500 md:text-base"
+            className="text-sm font-bold text-zinc-500 transition-all hover:text-blue-600 md:text-base"
             href="#home"
           >
             Inicio
           </Link>
           <Link
-            className="text-sm font-bold text-zinc-500 md:text-base"
+            className="text-sm font-bold text-zinc-500 transition-all hover:text-blue-600 md:text-base"
             href="#services"
           >
             Servicios
           </Link>
           <Link
-            className="text-sm font-bold text-zinc-500 md:text-base"
+            className="text-sm font-bold text-zinc-500 transition-all hover:text-blue-600 md:text-base"
+            href="#projects"
+          >
+            Proyectos
+          </Link>
+          <Link
+            className="text-sm font-bold text-zinc-500 transition-all hover:text-blue-600 md:text-base"
             href="#contact"
           >
             Contacto
