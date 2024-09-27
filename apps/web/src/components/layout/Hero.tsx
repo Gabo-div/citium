@@ -6,9 +6,9 @@ import Navbar from "./Navbar";
 
 export default function Hero() {
   return (
-    <header id="home" className="relative flex h-screen overflow-hidden">
+    <header id="home" className="relative flex min-h-screen overflow-hidden">
       <Navbar />
-      <div className="flex h-full w-full items-center py-20">
+      <div className="mt-20 flex h-full w-full items-center py-20">
         <div className="container mx-auto flex max-w-6xl px-4">
           <div className="mx-auto flex max-w-lg flex-col gap-6 lg:w-2/5">
             <h1 className="text-center font-serif text-2xl font-bold leading-tight sm:text-3xl md:text-4xl lg:text-left lg:text-6xl">
