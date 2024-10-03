@@ -1,0 +1,46 @@
+{
+  "name": "@citium/sqlite-adapter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "format": "prettier --write ./src",
+    "build": "rimraf dist && tsx build.ts",
+    "dev": "pnpm build -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@citium/types": "workspace:*",
+    "@citium/typescript-config": "workspace:*",
+    "@eslint/js": "^9.10.0",
+    "@types/yargs-parser": "^21.0.3",
+    "concurrently": "^9.0.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^8",
+    "glob": "^11.0.0",
+    "globals": "^15.9.0",
+    "prettier": "^3.2.5",
+    "prettier-plugin-embed": "^0.4.15",
+    "prettier-plugin-sql": "^0.18.1",
+    "rimraf": "^6.0.1",
+    "tsc-alias": "^1.8.10",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.6.0",
+    "yargs-parser": "^21.1.1"
+  },
+  "dependencies": {
+    "@libsql/client": "^0.14.0"
+  }
+}
