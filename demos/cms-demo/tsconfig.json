@@ -1,0 +1,11 @@
+{
+  "extends": "@citium/typescript-config/base.json",
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"]
+    },
+    "outDir": "./dist"
+  },
+  "exclude": ["node_modules", "./*.ts", "__test__", "dist"]
+}
