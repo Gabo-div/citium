@@ -11,7 +11,7 @@ export default function Services() {
         "Creamos diseños únicos y atractivos que reflejan la identidad de tu marca. Nuestro enfoque en la usabilidad y la experiencia del usuario garantiza que tu sitio web no solo sea visualmente impresionante, sino también fácil de navegar.",
     },
     {
-      title: "Diseño y Desarrollo Web Personalizado:",
+      title: "Diseño y Desarrollo Web Personalizado",
       image: AtenasImage,
       description:
         "Desarrollamos soluciones web robustas y escalables. Ya sea que necesites un sitio web corporativo, una tienda en línea o una aplicación web personalizada, nuestro equipo tiene la experiencia para llevar tu proyecto al siguiente nivel.",
@@ -35,7 +35,7 @@ export default function Services() {
         "Ofrecemos hosting completo con el dominio que necesites, asegurando que tu sitio web esté siempre en línea y funcionando correctamente. Este servicio opcional, te proporciona una gestión sin preocupaciones.",
     },
     {
-      title: "Consultaria y estrategia digital:",
+      title: "Consultaria y estrategia digital",
       image: AtenasImage,
       description:
         "Detectamos el problema o la necesidad de tu marca y realizamos un análisis exhaustivo de las características de tu negocio. Conceptualizamos, diseñamos y producimos una propuesta a la altura de tus necesidades. Te asesoramos en estrategias digitales para definir y alcanzar tus objetivos online.",
