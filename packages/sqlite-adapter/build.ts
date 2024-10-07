@@ -12,7 +12,6 @@ const flags = yargs(process.argv, {
 });
 
 const isWatch = Boolean(flags.watch);
-const entryPoints = glob.sync("./src/**/*.ts");
 
 const addExtension = (
   extension: string = ".js",
@@ -49,7 +48,7 @@ const addExtension = (
 });
 
 const commonOptions: BuildOptions = {
-  entryPoints,
+  entryPoints: ["./src/**/*.ts"],
   logLevel: "info",
   platform: "node",
 };
