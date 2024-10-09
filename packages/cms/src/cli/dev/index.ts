@@ -1,25 +1,27 @@
 import type { Arguments } from "yargs-parser";
-import { getConfig } from "../config";
-import citium from "../../index.js";
-import { Hono } from "hono";
-import { serve } from "@hono/node-server";
+import chokidar from "chokidar";
+import { fork } from "child_process";
 
 export const dev = async (flags: Arguments) => {
-  const config = await getConfig();
-  const app = new Hono();
-
-  await citium.init({
-    hono: app,
-    adapter: config.adapter,
+  const watcher = chokidar.watch("node_modules/@citium/cms/dist", {
+    persistent: true,
   });
 
-  serve(
-    {
-      fetch: app.fetch,
-      port: config.port,
-    },
-    (info) => {
-      console.log(`Server running at http://localhost:${info.port}`);
-    },
-  );
+  const serverPath = "node_modules/@citium/cms/dist/esm/cli/dev/server.js";
+  let child = fork(serverPath);
+
+  const delay = 500;
+  let timer: NodeJS.Timeout;
+
+  watcher.on("change", async (path) => {
+    if (timer) {
+      clearTimeout(timer);
+    }
+
+    timer = setTimeout(async () => {
+      console.log("Changes in package detected, restarting server...");
+      child.kill();
+      child = fork(serverPath);
+    }, delay);
+  });
 };
