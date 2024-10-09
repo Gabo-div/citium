@@ -2,9 +2,9 @@ import { z } from "zod";
 import { adapterSchema } from "./adapter";
 import { Hono } from "hono";
 
-export const configSchema = z.object({
+export const optionsSchema = z.object({
   hono: z.instanceof(Hono),
   adapter: adapterSchema,
 });
 
-export type Config = z.infer<typeof configSchema>;
+export type Options = z.infer<typeof optionsSchema>;
