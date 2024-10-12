@@ -15,7 +15,9 @@
     "lint": "eslint .",
     "format": "prettier --write ./src",
     "build": "rimraf dist && tsx build.ts",
-    "dev": "pnpm build -w"
+    "dev": "pnpm build -w",
+    "check-types": "tsc --noEmit",
+    "check-format": "prettier --check ./src"
   },
   "keywords": [],
   "author": "",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@citium/types": "workspace:*",
     "@citium/typescript-config": "workspace:*",
+    "@citium/eslint-config": "workspace:*",
     "@eslint/js": "^9.10.0",
     "@types/yargs-parser": "^21.0.3",
     "concurrently": "^9.0.1",

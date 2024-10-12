@@ -6,10 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
-    "format": "prettier --write ./src",
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "citium dev"
+    "dev": "citium dev",
+    "check-types": "tsc --noEmit",
+    "check-format": "echo \"TODO: check-format\"",
+    "format": "echo \"TODO: format\""
   },
   "keywords": [],
   "author": "",

@@ -5,8 +5,12 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "lint": "eslint .",
     "build": "rimraf dist && tsx build.ts",
-    "dev": "pnpm build -w"
+    "dev": "pnpm build -w",
+    "check-types": "tsc --noEmit",
+    "format": "prettier --write ./src",
+    "check-format": "prettier --check ./src"
   },
   "exports": {
     "./adapter": {
@@ -49,6 +53,7 @@
   },
   "devDependencies": {
     "@citium/typescript-config": "workspace:*",
+    "@citium/eslint-config": "workspace:*",
     "@types/node": "^20",
     "@types/yargs-parser": "^21.0.3",
     "esbuild": "^0.24.0",

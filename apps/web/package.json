@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "prettier --write ./src",
+    "check-types": "tsc --noEmit",
+    "check-format": "prettier --check ./src"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

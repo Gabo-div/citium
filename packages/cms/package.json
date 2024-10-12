@@ -18,7 +18,9 @@
     "lint": "eslint .",
     "format": "prettier --write ./src",
     "build": "rimraf dist && tsx build.ts",
-    "dev": "pnpm build -w"
+    "dev": "pnpm build -w",
+    "check-types": "tsc --noEmit",
+    "check-format": "prettier --check ./src"
   },
   "keywords": [],
   "author": "",
