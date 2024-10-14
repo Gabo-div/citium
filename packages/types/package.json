@@ -14,32 +14,32 @@
   },
   "exports": {
     "./adapter": {
-      "types": "./dist/types/adapter.d.ts",
+      "types": "./src/adapter.ts",
       "import": "./dist/esm/adapter.js",
       "require": "./dist/cjs/adapter.js"
     },
     "./collection": {
-      "types": "./dist/types/collection.d.ts",
+      "types": "./src/collection.ts",
       "import": "./dist/esm/collection.js",
       "require": "./dist/cjs/collection.js"
     },
     "./config": {
-      "types": "./dist/types/config.d.ts",
+      "types": "./src/config.ts",
       "import": "./dist/esm/config.js",
       "require": "./dist/cjs/config.js"
     },
     "./options": {
-      "types": "./dist/types/options.d.ts",
+      "types": "./src/options.ts",
       "import": "./dist/esm/options.js",
       "require": "./dist/cjs/options.js"
     },
     "./fields": {
-      "types": "./dist/types/fields.d.ts",
+      "types": "./src/fields.ts",
       "import": "./dist/esm/fields.js",
       "require": "./dist/cjs/fields.js"
     },
     "./user": {
-      "types": "./dist/types/user.d.ts",
+      "types": "./src/user.ts",
       "import": "./dist/esm/user.js",
       "require": "./dist/cjs/user.js"
     }
