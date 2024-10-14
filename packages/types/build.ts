@@ -1,6 +1,5 @@
 import esbuild, { BuildOptions, PluginBuild } from "esbuild";
 import yargs from "yargs-parser";
-import { glob } from "glob";
 import path from "path";
 import fs from "fs";
 import { exec } from "node:child_process";

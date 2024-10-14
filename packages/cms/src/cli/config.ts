@@ -55,7 +55,7 @@ const bundleConfigFile = async (fileName: string): Promise<string> => {
   return code;
 };
 
-const loadConfig = async (code: string, fileName: string): Promise<any> => {
+const loadConfig = async (code: string, fileName: string): Promise<unknown> => {
   const fileBase = `${fileName}.timestamp-${Date.now()}-${Math.random()
     .toString(16)
     .slice(2)}`;

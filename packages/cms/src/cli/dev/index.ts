@@ -2,7 +2,7 @@ import type { Arguments } from "yargs-parser";
 import chokidar from "chokidar";
 import { fork } from "child_process";
 
-export const dev = async (flags: Arguments) => {
+export const dev = async (_flags: Arguments) => {
   const watcher = chokidar.watch("node_modules/@citium/cms/dist", {
     persistent: true,
   });
@@ -13,7 +13,7 @@ export const dev = async (flags: Arguments) => {
   const delay = 500;
   let timer: NodeJS.Timeout;
 
-  watcher.on("change", async (path) => {
+  watcher.on("change", async () => {
     if (timer) {
       clearTimeout(timer);
     }
