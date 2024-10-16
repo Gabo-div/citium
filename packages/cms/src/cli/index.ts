@@ -2,7 +2,12 @@ import yargs, { Arguments } from "yargs-parser";
 import { CITIUM_VERSION } from "../constants";
 import * as colors from "kleur/colors";
 
-type CLICommand = "help" | "version" | "db" | "dev";
+enum CLICommand {
+  help = "help",
+  version = "version",
+  db = "db",
+  dev = "dev",
+}
 
 export const cli = async (args: string[]) => {
   const flags = yargs(args);
@@ -18,16 +23,15 @@ export const cli = async (args: string[]) => {
 };
 
 const resolveCommand = (flags: Arguments): CLICommand => {
+  if (flags.version) return CLICommand.version;
+
   const cmd = flags._[2] as string;
-  if (flags.version) return "version";
 
-  const supportedCommands = new Set(["help", "version", "db", "dev"]);
-
-  if (supportedCommands.has(cmd)) {
+  if (CLICommand[cmd as keyof typeof CLICommand]) {
     return cmd as CLICommand;
   }
 
-  return "help";
+  return CLICommand.help;
 };
 
 const runCommand = async (cmd: CLICommand, flags: Arguments) => {
